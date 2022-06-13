@@ -22,17 +22,11 @@ export default function Footer() {
         <Box sx={styles.left}>
           <Logo />
           <Text as="p">
-            &copy; {new Date().getFullYear()} All right reserved - Design &
-            Developed by RedQ, Inc
+            &copy; {new Date().getFullYear()} - Design &
+            Developed by Vedant, Omar, Llama and Leo
           </Text>
         </Box>
-        <Box sx={styles.right}>
-          <Link path="/" label="Home" />
-          <Link path="/" label="Adversite" />
-          <Link path="/" label="Supports" />
-          <Link path="/" label="Marketing" />
-          <Link path="/" label="FAQ" />
-        </Box>
+
       </Container>
     </footer>
   );
@@ -66,3 +60,10 @@ const styles = {
     },
   },
 };
+<Box sx={styles.right}>
+<Link path="/" label="Home" />
+<Link path="/" label="Adversite" />
+<Link path="/" label="Supports" />
+<Link path="/" label="Marketing" />
+<Link path="/" label="FAQ" />
+</Box>

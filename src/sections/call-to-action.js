@@ -8,11 +8,11 @@ const CallToAction = () => {
       <Container sx={styles.container}>
         <Box sx={styles.inner}>
           <Heading as="h3">
-            Hire the world’s best developers <br />
-            and designers around!
+            Use the world's best web obfuscation <br />
+            tool to make it happen!
           </Heading>
           <Box sx={styles.btnWrapper}>
-            <Button sx={styles.btn}>HIRE DEVELOPERS</Button>
+            <Button sx={styles.btn}>OBFUSCATE NOW</Button>
           </Box>
         </Box>
       </Container>
