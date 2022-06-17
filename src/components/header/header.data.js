@@ -10,9 +10,5 @@ export default [
   {
     path: 'testimonials',
     label: 'Testimonials',
-  },
-  {
-    path: 'news',
-    label: 'News',
-  },
+  }
 ];
