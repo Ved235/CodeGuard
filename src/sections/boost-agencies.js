@@ -22,15 +22,15 @@ const BoostAgencies = () => {
               <Box as="ul" sx={styles.list}>
                 <Text as="li">
                   <IoIosCheckmarkCircle />
-                  Unlimited Obfuscations
+                  Unlimited obfuscations
                 </Text>
                 <Text as="li">
                   <IoIosCheckmarkCircle />
-                  Python(.py) and JavaScript(.js)
+                  Python(.py) and Javascript(.js)
                 </Text>
                 <Text as="li">
                   <IoIosCheckmarkCircle />
-                  Available in your Browser
+                  Available in your browser
                 </Text>
               </Box>
 

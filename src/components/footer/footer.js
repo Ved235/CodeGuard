@@ -16,14 +16,14 @@ export default function Footer() {
           justifyContent: ['center', null, null, 'space-between'],
           flexDirection: ['column', null, null, null, 'row'],
           paddingTop: [30, 40],
-   
+          paddingBottom: [30, 65],
         }}
       >
-        <Box sx={styles.middle}>
+        <Box sx={styles.left}>
           <Logo />
-          <Text as="p" sx={styles.right}> 
+          <Text as="p">
             &copy; {new Date().getFullYear()} - Design &
-            Developed by Vedant, Omar and Leo
+            Developed by Vedant, Omar, Llama and Leo
           </Text>
         </Box>
 
@@ -46,7 +46,6 @@ const styles = {
   },
   right: {
     display: ['none', null, null, null, 'flex'],
-    paddingBottom: 20,
     fontSize: 2,
     alignItems: 'center',
     color: 'black',
