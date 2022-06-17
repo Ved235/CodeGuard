@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Container, Heading, Button } from 'theme-ui';
 import BgShape from 'assets/cta-shape-1.svg';
 import btnShape from 'assets/cta-btn-shape-1.svg';
-import { Link } from 'components/link';
 const CallToAction = () => {
   return (
     <Box sx={styles.wrapper}>
@@ -13,9 +12,7 @@ const CallToAction = () => {
             tool to make it happen!
           </Heading>
           <Box sx={styles.btnWrapper}>
-          <Link path="/obfuscate" sx={styles.btn}>
-           OBFUSCATE NOW 
-        </Link>
+            <Button sx={styles.btn}>OBFUSCATE NOW</Button>
           </Box>
         </Box>
       </Container>

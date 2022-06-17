@@ -19,7 +19,7 @@ const Banner = () => {
               Protect Your Code
             </Heading>
             <Text as="p">
-              We provide a tool which allows you to obfuscate your code in no time and shield it.
+              We provide a tool which allows you to obfuscate your code in no time and protect it
             </Text>
             <Box as="form" sx={styles.form}>
               <Box as="label" htmlFor="subscribe" variant="styles.srOnly">
@@ -28,7 +28,7 @@ const Banner = () => {
               <Input
                 name="subscribe"
                 id="subscribe"
-                placeholder="Subscribe to newsletter"
+                placeholder="Subscribe newsletter"
                 sx={styles.form.input}
               />
               <Button type="submit" sx={styles.form.button}>

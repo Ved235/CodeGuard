@@ -4,8 +4,8 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import Drawer from 'components/drawer';
 import { DrawerContext } from 'contexts/drawer/drawer.context';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
-
-import { Github } from 'components/customIcon';
+import { Link } from 'components/link';
+import { Facebook, Twitter, Github, Dribbble } from 'components/customIcon';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import menuItems from './header.data';
 import Logo from 'components/logo';
@@ -14,7 +14,19 @@ import LogoDark from 'assets/logo.svg';
 const social = [
   {
     path: '/',
+    icon: <Facebook />,
+  },
+  {
+    path: '/',
+    icon: <Twitter />,
+  },
+  {
+    path: '/',
     icon: <Github />,
+  },
+  {
+    path: '/',
+    icon: <Dribbble />,
   },
 ];
 

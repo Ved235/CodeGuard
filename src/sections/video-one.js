@@ -17,23 +17,33 @@ const VideoOne = () => {
     <Box as="section" sx={styles.video}>
       <Container>
         <Heading as="h3">
-          You Trust Us <br /> to Protect your Code
+          Leading companies trust us <br /> to develop software
         </Heading>
         <Text as="p">
-        We believe it's important for everyone to have privacy and rights to their software especially {' '}
+          We believe it’s important for everyone to have access to software{' '}
           <br />
-          when it comes to creating online entities on the web with essential code.
+          especially when it comes to digital learning be navigate.
         </Text>
         <Link path="/" sx={styles.link}>
           Explore Details <FaAngleRight />
         </Link>
         <Box sx={styles.videoBox}>
           <Image src={videoImg} alt="" />
-
+          <Link
+            path="/"
+            aria-label="video btn"
+            onClick={handleClick}
+            sx={styles.videoBtn}
+          >
+            <FaPlay />
+          </Link>
         </Box>
       </Container>
       <ModalVideo
         channel="youtube"
+        isOpen={videoOpen}
+        videoId="Cm3U-NgJb9I"
+        onClose={() => setVideoOpen(false)}
       />
     </Box>
   );
@@ -87,5 +97,28 @@ const styles = {
       top: '3px',
     },
   },
-
+  videoBtn: {
+    width: [44, null, 44, 66, 120],
+    height: [44, null, 44, 66, 120],
+    borderRadius: '50%',
+    backgroundColor: '#fff',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)',
+    transition: '500ms ease',
+    svg: {
+      fontSize: ['15px', null, '15px', null, '22px', '35px'],
+      color: ['primary'],
+    },
+    '&:hover': {
+      backgroundColor: 'primary',
+      svg: {
+        color: '#fff',
+      },
+    },
+  },
 };
