@@ -8,7 +8,7 @@ import { IoMdClose, IoMdMenu } from 'react-icons/io';
 
 import { Github } from '../customIcon';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
-import menuItems from './header.data';
+
 import Logo from 'components/logo';
 import LogoDark from '../logo.svg';
 
@@ -19,7 +19,7 @@ const social = [
   },
 ];
 
-const MobileDrawer = () => {
+const CustomMobileDrawer = () => {
   const { state, dispatch } = useContext(DrawerContext);
 
   // Toggle drawer
@@ -46,27 +46,12 @@ const MobileDrawer = () => {
       <Scrollbars autoHide>
         <Box sx={styles.content}>
           <Logo src={LogoDark} />
-          <Box sx={styles.menu}>
-            {menuItems.map(({ path, label }, i) => (
-              <ScrollLink
-                activeClass="active"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={10}
-                duration={500}
-                key={i}
-              >
-                {label}
-              </ScrollLink>
-            ))}
-          </Box>
 
           <Box sx={styles.menuFooter}>
           <Link
-            path="/obfuscate"
+            path="/"
             ml={2}
-            label="OBFUSCATE"
+            label="Home"
             sx={styles.button}
             variant="buttons.primary"
           />
@@ -155,4 +140,4 @@ const styles = {
   },
 };
 
-export default MobileDrawer;
+export default CustomMobileDrawer;

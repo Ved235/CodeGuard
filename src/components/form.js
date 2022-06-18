@@ -1,31 +1,23 @@
 import React, { useState } from "react";
-import InfoThree from "./infoThree";
 import InfoOne from './infoOne';
 import InfoTwo from "./infoTwo";
 import styles from '../theme/obfuscate.module.css'
 function Form() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-    firstName: "",
-    lastName: "",
-    username: "",
-    nationality: "",
-    other: "",
+    lang: "",
+    link:""
   });
 
-  const FormTitles = ["Sign Up", "Personal Info", "Other"];
+  const FormTitles = ["Upload your file", "Programming language"];
 
   const PageDisplay = () => {
     if (page === 0) {
-      return <InfoThree formData={formData} setFormData={setFormData} />;
-    } else if (page === 1) {
       return <InfoOne formData={formData} setFormData={setFormData} />;
-    } else {
+      
+    } else if (page === 1) {
       return <InfoTwo formData={formData} setFormData={setFormData} />;
-    }
+    } 
   };
 
   return (
@@ -33,7 +25,7 @@ function Form() {
     <div className={styles.form}>
       <div className="progressbar">
         <div
-          style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}
+          style={{ width: page === 0 ? "33.3%" : "100%" }}
         ></div>
       </div>
       <div className={styles.formContainer}>
@@ -44,7 +36,8 @@ function Form() {
         <div className={styles.footer}>
           <button
            className={styles.button}
-            disabled={page == 0}
+          
+            hidden={page == 0}
             onClick={() => {
               setPage((currPage) => currPage - 1);
             }}

@@ -21,32 +21,7 @@ const Banner = () => {
             <Text as="p">
               We provide a tool which allows you to obfuscate your code in no time and shield it.
             </Text>
-            <Box as="form" sx={styles.form}>
-              <Box as="label" htmlFor="subscribe" variant="styles.srOnly">
-                subscribe
-              </Box>
-              <Input
-                name="subscribe"
-                id="subscribe"
-                placeholder="Subscribe to newsletter"
-                sx={styles.form.input}
-              />
-              <Button type="submit" sx={styles.form.button}>
-                Subscribe
-              </Button>
-            </Box>
-            <Box sx={styles.partner}>
-              <Text as="span">Sponsored by:</Text>
-              <Box as="div">
-                <Image src={img1} alt="" />
-              </Box>
-              <Box as="div">
-                <Image src={img2} alt="" />
-              </Box>
-              <Box as="div">
-                <Image src={img3} alt="" />
-              </Box>
-            </Box>
+
           </Box>
           <Box sx={styles.image}>
             <Image src={bannerImg} alt="" />

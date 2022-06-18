@@ -7,8 +7,5 @@ export default [
     path: 'services',
     label: 'Services',
   },
-  {
-    path: 'testimonials',
-    label: 'Testimonials',
-  }
+
 ];

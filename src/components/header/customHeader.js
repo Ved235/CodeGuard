@@ -7,42 +7,26 @@ import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import Logo from 'components/logo';
 
 import { DrawerProvider } from 'contexts/drawer/drawer.provider';
-import MobileDrawer from './mobileDrawer';
-import menuItems from './header.data';
+import CustomMobileDrawer from './customMobileDrawer';
 
-export default function Header({ className }) {
+
+export default function CustomHeader({ className }) {
   return (
     <DrawerProvider>
       <header sx={styles.header} className={className}>
         <Container sx={styles.container}>
           <Logo />
 
-          <Flex as="nav" sx={styles.nav}>
-            {menuItems.map(({ path, label }, i) => (
-              <ScrollLink
-                activeClass="active"
-                sx={styles.nav.navLink}
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {label}
-              </ScrollLink>
-            ))}
-          </Flex>
+
 
           <Link
-            path="/obfuscate"
+            path="/"
             ml={2}
-            label="OBFUSCATE"
+            label="Home"
             sx={styles.headerBtn}
             variant="buttons.primary"
           />
-
-          <MobileDrawer />
+          <CustomMobileDrawer />
         </Container>
       </header>
     </DrawerProvider>
@@ -60,8 +44,9 @@ const styles = {
     borderColor: 'primary',
     color: 'primary',
     padding: '8px 24px',
+
     display: ['none', null, null, null, 'inline-block'],
-    ml: ['0', null, null, 'auto', '0'],
+    ml: ['0', null, null, 'auto', '30vw'],
     mr: ['0', null, null, '20px', '0'],
     '&:hover': {
       color: '#fff',
@@ -92,26 +77,5 @@ const styles = {
     '@media screen and (max-width: 960px)': {
       justifyContent: 'space-between',
     },
-  },
-  nav: {
-    mx: 'auto',
-    '@media screen and (max-width: 960px)': {
-      display: 'none',
-    },
-    navLink: {
-      fontSize: '16px',
-      color: '#02073E',
-      fontWeight: '400',
-      cursor: 'pointer',
-      lineHeight: '1.2',
-      mr: '48px',
-      transition: '500ms',
-      ':last-child': {
-        mr: '0',
-      },
-      '&:hover, &.active': {
-        color: 'primary',
-      },
-    },
-  },
+  }
 };

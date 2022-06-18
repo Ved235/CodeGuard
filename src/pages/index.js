@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 
 import Banner from 'sections/banner';
 import Services from 'sections/services';
-import Testimonials from 'sections/testimonials';
+
 
 import VideoOne from 'sections/video-one';
 import CallToAction from 'sections/call-to-action';
@@ -23,7 +23,7 @@ export default function IndexPage() {
           <Services />
           <BoostAgencies />
           <VideoOne />
-          <Testimonials />
+    
 
 
           <CallToAction />
