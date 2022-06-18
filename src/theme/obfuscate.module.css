@@ -37,6 +37,7 @@
   flex: 20%;
   display: grid;
   place-items: center;
+  cursor: default;
 }
 
 .body {
@@ -75,6 +76,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 
@@ -101,6 +103,7 @@
   height: 40px;
   padding-left: 5px;
   font-size: 20px;
+
 }
 
 .input:focus {

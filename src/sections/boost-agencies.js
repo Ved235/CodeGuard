@@ -26,11 +26,11 @@ const BoostAgencies = () => {
                 </Text>
                 <Text as="li">
                   <IoIosCheckmarkCircle />
-                  Python(.py) and JavaScript(.js)
+                  Python (.py) and JavaScript (.js)
                 </Text>
                 <Text as="li">
                   <IoIosCheckmarkCircle />
-                  Available in your Browser
+                  Available in your browser
                 </Text>
               </Box>
 

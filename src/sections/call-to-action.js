@@ -29,7 +29,7 @@ const styles = {
   wrapper: {},
   inner: {
     padding: ['45px 30px 50px', null, null, '45px 50px', null, '45px 70px'],
-    mt: [0, null, null, null, '-80px'],
+    mt: [0, null, null, null, '5vh'],
     position: 'relative',
     zIndex: '10',
     backgroundColor: 'primary',

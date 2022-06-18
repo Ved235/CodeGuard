@@ -4,11 +4,13 @@ import { Input, Text} from 'theme-ui';
 function InfoOne({ formData, setFormData }) {
   return (
     <div className={styles.eachContainer}>
-      <Text sx={{align:'center', fontSize:'18px',marginBottom: '15px'}}>Go to File Doge and upload your JavaScript or your Python file, and copy the link</Text>
+ 
+      <Text sx={{fontSize:'18px',marginBottom: '15px', cursor: 'default'}}>Go to GitHub Gist and upload your JavaScript or your Python file, and copy the link</Text>
+ 
       <Input
       sx={style.input}
         type="text"
-        placeholder="File Doge Link"
+        placeholder="GitHub Gist Link"
         value={formData.link}
         onChange={(e) => {
           setFormData({ ...formData, link: e.target.value });
@@ -30,6 +32,6 @@ const style={
       outline: 'none',
       boxShadow: '0px 10px 50px rgba(48, 98, 145, 0.08)',
       mt:'5px'
-    },
+    }
 }
 export default InfoOne;

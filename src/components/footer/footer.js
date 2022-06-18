@@ -23,7 +23,7 @@ export default function Footer() {
           <Logo />
           <Text as="p" sx={styles.right}> 
             &copy; {new Date().getFullYear()} - Design &
-            Developed by Vedant, Omar and Leo
+            Developed by Vedant and Omar
           </Text>
         </Box>
 
