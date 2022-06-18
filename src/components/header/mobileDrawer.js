@@ -1,32 +1,20 @@
 import React, { useContext } from 'react';
 import { Button, Box } from 'theme-ui';
 import { Scrollbars } from 'react-custom-scrollbars';
-import Drawer from 'components/drawer';
+import Drawer from '../drawer';
 import { DrawerContext } from 'contexts/drawer/drawer.context';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
-import { Link } from 'components/link';
-import { Facebook, Twitter, Github, Dribbble } from 'components/customIcon';
+
+import { Github } from '../customIcon';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import menuItems from './header.data';
 import Logo from 'components/logo';
-import LogoDark from 'assets/logo.svg';
+import LogoDark from '../logo.svg';
 
 const social = [
   {
     path: '/',
-    icon: <Facebook />,
-  },
-  {
-    path: '/',
-    icon: <Twitter />,
-  },
-  {
-    path: '/',
     icon: <Github />,
-  },
-  {
-    path: '/',
-    icon: <Dribbble />,
   },
 ];
 

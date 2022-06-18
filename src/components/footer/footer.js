@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box, Text, Container } from 'theme-ui';
-import { Link } from 'components/link';
-import Logo from 'components/logo';
+import { Link } from '../link';
+import Logo from '../logo';
 export default function Footer() {
   return (
     <footer
@@ -16,14 +16,14 @@ export default function Footer() {
           justifyContent: ['center', null, null, 'space-between'],
           flexDirection: ['column', null, null, null, 'row'],
           paddingTop: [30, 40],
-          paddingBottom: [30, 65],
+   
         }}
       >
-        <Box sx={styles.left}>
+        <Box sx={styles.middle}>
           <Logo />
-          <Text as="p">
+          <Text as="p" sx={styles.right}> 
             &copy; {new Date().getFullYear()} - Design &
-            Developed by Vedant, Omar, Llama and Leo
+            Developed by Vedant, Omar and Leo
           </Text>
         </Box>
 
@@ -46,6 +46,7 @@ const styles = {
   },
   right: {
     display: ['none', null, null, null, 'flex'],
+    paddingBottom: 20,
     fontSize: 2,
     alignItems: 'center',
     color: 'black',

@@ -17,7 +17,7 @@ const TESTIMONIALS_DATA = [
     heading: 'Pierre Hackett',
     designation: 'VP of Engineering',
     content:
-      'They are doing amazing job with hundred percent customer satisfaction, Love their work and would like to work with them again',
+      'They are doing amazing job with hundred percent customer satisfaction, Love their tool!',
   },
   {
     image: img2,
@@ -33,20 +33,7 @@ const TESTIMONIALS_DATA = [
     content:
       'Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal.',
   },
-  {
-    image: img2,
-    heading: 'Natalia Sanz',
-    designation: 'Head of Technology',
-    content:
-      'Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional.',
-  },
-  {
-    image: img3,
-    heading: 'Ece Akman',
-    designation: 'Senior Marketer',
-    content:
-      'Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base.',
-  },
+
 ];
 
 const Testimonials = () => {
@@ -128,7 +115,8 @@ export default Testimonials;
 
 const styles = {
   testimonials: {
-    pt: ['65px', null, null, null, null, '80px', '170px'],
+    pt: ['65px', null, null, null, null, '80px', '150px'],
+    pb: ['75px', null, null, null, null, '120px', '210px'],
     '.blockTitle': {
       textAlign: 'center',
       marginBottom: ['25px', null, null, null, null, '50px'],
