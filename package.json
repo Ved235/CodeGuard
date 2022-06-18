@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "serve": "next start",
-    "export": "next export",
-    "postbuild": "next-sitemap"
+    "export": "next export"
   },
   "dependencies": {
+    "@next/env": "^12.1.6",
     "@sendgrid/mail": "^7.2.6",
     "dotenv": "^8.2.0",
     "framer-motion": "^2.7.5",
