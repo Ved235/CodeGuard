@@ -9,6 +9,7 @@ function InfoTwo({ formData, setFormData }) {
 <Select defaultValue="-- Select Programming Language --"   sx={style.input}         onChange={(event) =>
           setFormData({ ...formData, programmingLanguage: event.target.value })
         }>
+  <option>-- Select Programming Language --</option>
   <option>Python</option>
   <option>JavaScript</option>
 
@@ -16,6 +17,8 @@ function InfoTwo({ formData, setFormData }) {
     </div>
   );
 }
+
+
 const style={
     input: {
         borderRadius: ['4px'],
