@@ -58,10 +58,10 @@ function Form() {
               var validUrl = require('valid-url');
   
               if (validUrl.isUri(formData.codeLink)){
-                  console.log('Looks like an URI');
+                  console.log('Looks like an URL');
                   if (page === FormTitles.length - 1) {
                     alert("You have submitted the obfuscation form. Please wait until the obfuscated code is downloaded automatically.");
-                    
+
                     console.log(formData);
                   } else {
                     setPage((currPage) => currPage + 1);
