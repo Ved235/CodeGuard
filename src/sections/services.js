@@ -25,7 +25,7 @@ const SERVICES_DATA = [
     icon: icon3,
     title: 'Popular Languages',
     text:
-      'Obfuscate the 2 most popular coding languages (Javascript and Python)',
+      'Obfuscate the 2 most popular coding languages (JavaScript and Python)',
   },
   {
     icon: icon4,
