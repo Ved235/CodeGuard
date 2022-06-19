@@ -5,7 +5,7 @@ function InfoOne({ formData, setFormData }) {
   return (
     <div className={styles.eachContainer}>
  
-      <Text sx={{fontSize:'18px',marginBottom: '15px', cursor: 'default'}}>Go to <a style={{color: 'blue'}}href="https://gist.github.com/">GitHub Gist</a> and paste your JavaScript or your Python file,open in raw view and copy the link</Text>
+      <Text sx={{fontSize:'18px',marginBottom: '15px', cursor: 'default'}}>Go to <a style={{color: 'blue'}}href="https://gist.github.com/">GitHub Gist</a> and paste your JavaScript or your Python code, open your code in raw view and paste the link in the address bar below</Text>
  
       <Input
 
