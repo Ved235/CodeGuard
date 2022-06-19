@@ -60,12 +60,19 @@ function Form() {
               if (validUrl.isUri(formData.codeLink)){
                   console.log('Looks like an URL');
                   if (page === FormTitles.length - 1) {
-                    alert("You have submitted the obfuscation form. Please wait until the obfuscated code is downloaded automatically.");
-
-                    console.log(formData);
-                  } else {
-                    setPage((currPage) => currPage + 1);
+                    // if formdata.programmingLanguage is empty, error
+                    if (formData.programmingLanguage === "") {
+                      alert("Please select a programming language & try again!");
+                    }
+                    // otherwise, success
+                    else {
+                      alert("Success! Please wait until the obfuscated code is automatically downloaded!");
+                      
+                    }
                   }
+                else {
+                  setPage((currPage) => currPage + 1);
+                }
               } else {
                  alert('Not a valid URL');
               }
