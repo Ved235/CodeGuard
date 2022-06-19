@@ -5,6 +5,7 @@ import styles from '../theme/obfuscate.module.css';
 import { ThemeProvider } from 'theme-ui';
 import { StickyProvider } from 'contexts/app/app.provider';
 import theme from '../theme/index';
+import fetch from "node-fetch";
 
 import Layout from '../components/layout';
 function Form() {
@@ -66,6 +67,23 @@ function Form() {
                     }
                     else if (formData.programmingLanguage === "JavaScript") {
                       alert("Success! Your obfuscated code file will be automatically downloaded shortly.");
+                      // download file
+                      fetch(formData.codeLink)
+                      .then(resp => resp.blob())
+                      .then(blob => {
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = url;
+                        // the filename you want
+                        a.download = 'code.js';
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                        alert('Your code has been successfully downloaded to be obfuscated!'); // or you know, something with better UX...
+                      })
+                      .catch(() => alert('Oh no! Some error occured getting your code!'));
+
                     }
                     else {
                       alert("Please select a programming language and try again!");
