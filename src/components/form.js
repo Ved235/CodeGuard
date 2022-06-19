@@ -80,11 +80,30 @@ function Form() {
                         document.body.appendChild(a);
                         a.click();
                         window.URL.revokeObjectURL(url);
-                        alert('Your code has been successfully downloaded to be obfuscated!'); // or you know, something with better UX...
-                      })
-                      .catch(() => alert('Oh no! Some error occured getting your code!'));
-
+                        alert('Your code has been successfully downloaded to be obfuscated!');
+                        // run ObfuscatorUtil.js and wait until it finishes
+                        // then download the file
+                        var fs = require("fs");
+                        var jsObfuscator = require("javascript-obfuscator");
+                        fs.readFile('./code.js', 'UTF-8', function(error, code){
+                          if (error)
+                          {
+                              throw error;
+                          }
+                          var obfuscatorResult = jsObfuscator.obfuscate(code);
+                          fs.writeFile('./obfuscatedCode.js', obfuscatorResult.getObfuscatedCode(), function(fsError){
+                              if (fsError)
+                              {
+                                  return console.log(fsError);
+                              }
+                              alert("Obfuscated code written to file");
+                              // provide download link
+                          });
+                        });
+                      });
                     }
+
+                  
                     else {
                       alert("Please select a programming language and try again!");
                     }
