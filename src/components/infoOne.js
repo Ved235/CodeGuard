@@ -8,12 +8,13 @@ function InfoOne({ formData, setFormData }) {
       <Text sx={{fontSize:'18px',marginBottom: '15px', cursor: 'default'}}>Go to <a style={{color: 'blue'}}href="https://gist.github.com/">GitHub Gist</a> and upload your JavaScript or your Python file, and copy the link</Text>
  
       <Input
+
       sx={style.input}
-        type="text"
+
         placeholder="GitHub Gist Link"
-        value={formData.link}
+        value={formData.codeLink }
         onChange={(e) => {
-          setFormData({ ...formData, link: e.target.value });
+          setFormData({ ...formData, codeLink : e.target.value });
         }}
       />
      

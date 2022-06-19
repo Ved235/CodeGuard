@@ -6,8 +6,8 @@ function InfoTwo({ formData, setFormData }) {
   return (
     <div className={styles.eachContainer}>
 
-<Select defaultValue="Hello"   sx={style.input}         onChange={(event) =>
-          setFormData({ ...formData, lang: event.target.value })
+<Select defaultValue="Python"   sx={style.input}         onChange={(event) =>
+          setFormData({ ...formData, programmingLanguage: event.target.value })
         }>
   <option>Python</option>
   <option>JavaScript</option>

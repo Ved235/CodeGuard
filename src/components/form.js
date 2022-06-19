@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import InfoOne from './infoOne';
 import InfoTwo from "./infoTwo";
-import styles from '../theme/obfuscate.module.css'
+import styles from '../theme/obfuscate.module.css';
+import { ThemeProvider } from 'theme-ui';
+import { StickyProvider } from 'contexts/app/app.provider';
+import theme from '../theme/index';
+
+import Layout from '../components/layout';
 function Form() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    lang: "",
-    link:""
+    programmingLanguage: "",
+    codeLink:""
   });
 
   const FormTitles = ["Upload your file", "Programming language"];
@@ -21,6 +26,8 @@ function Form() {
   };
 
   return (
+
+     <Layout>
    <div className={styles.app}>
     <div className={styles.form}>
       <div className="progressbar">
@@ -36,7 +43,7 @@ function Form() {
         <div className={styles.footer}>
           <button
            className={styles.button}
-          
+         
             hidden={page == 0}
             onClick={() => {
               setPage((currPage) => currPage - 1);
@@ -46,13 +53,28 @@ function Form() {
           </button>
           <button
           className={styles.button}
+          type="submit"
             onClick={() => {
-              if (page === FormTitles.length - 1) {
+              var validUrl = require('valid-url');
+  
+              if (validUrl.isUri(formData.codeLink)){
+                  console.log('Looks like an URI');
+                  if (page === FormTitles.length - 1) {
+                    alert("FORM SUBMITTED");
+                    console.log(formData);
+                  } else {
+                    setPage((currPage) => currPage + 1);
+                  }
+              } else {
+                 alert('Not a valid URL');
+              }
+              /*if (page === FormTitles.length - 1) {
                 alert("FORM SUBMITTED");
                 console.log(formData);
               } else {
                 setPage((currPage) => currPage + 1);
-              }
+              }*/
+              
             }}
           >
             {page === FormTitles.length - 1 ? "Submit" : "Next"}
@@ -61,6 +83,8 @@ function Form() {
       </div>
     </div>
     </div>
+  
+            </Layout>
   );
 }
 

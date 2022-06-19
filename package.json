@@ -14,6 +14,7 @@
     "dotenv": "^8.2.0",
     "framer-motion": "^2.7.5",
     "globby": "^11.0.0",
+    "is-url": "^1.2.4",
     "isomorphic-unfetch": "^3.0.0",
     "next": "9.5.3",
     "next-compose-plugins": "^2.2.0",
@@ -31,7 +32,8 @@
     "react-waypoint": "^9.0.2",
     "swiper": "^6.3.1",
     "theme-ui": "^0.3.1",
-    "typeface-dm-sans": "^1.1.3"
+    "typeface-dm-sans": "^1.1.3",
+    "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "imagemin-mozjpeg": "^9.0.0",

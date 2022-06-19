@@ -15,17 +15,11 @@ export default function CustomHeader({ className }) {
     <DrawerProvider>
       <header sx={styles.header} className={className}>
         <Container sx={styles.container}>
-          <Logo />
+          <Link path="/">          <Logo />
+</Link>
 
 
 
-          <Link
-            path="/"
-            ml={2}
-            label="Home"
-            sx={styles.headerBtn}
-            variant="buttons.primary"
-          />
           <CustomMobileDrawer />
         </Container>
       </header>

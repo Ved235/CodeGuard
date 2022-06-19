@@ -5,7 +5,7 @@ import theme from "theme";
 import SEO from "components/seo";
 import Layout from "components/layout";
 import CustomHeader from "../components/header/customHeader";
-import Footer from "../components/footer/footer";
+
 import Form from "../components/form";
 
 export default function ObfuscatePage() {
@@ -15,7 +15,7 @@ export default function ObfuscatePage() {
 <CustomHeader />
         <SEO title="CodeGuard" />
         <Form />
-        <Footer />
+  
       </StickyProvider>
     </ThemeProvider>
   );
