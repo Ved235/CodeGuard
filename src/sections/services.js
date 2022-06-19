@@ -13,7 +13,7 @@ const SERVICES_DATA = [
     icon: icon1,
     title: 'Protects Privacy',
     text:
-      'Makes your code impossible to understand and protects code integrity.',
+      'Makes your code hard to understand and protects code integrity.',
   },
   {
     icon: icon2,
