@@ -60,14 +60,15 @@ function Form() {
               if (validUrl.isUri(formData.codeLink)){
                   console.log('Looks like an URL');
                   if (page === FormTitles.length - 1) {
-                    // if formdata.programmingLanguage is empty, error
-                    if (formData.programmingLanguage === "") {
-                      alert("Please select a programming language & try again!");
+                    // if formdata.programmingLanguage is Python
+                    if (formData.programmingLanguage === "Python") {
+                      alert("Success! Your obfuscated code file will be automatically downloaded shortly.");
                     }
-                    // otherwise, success
+                    else if (formData.programmingLanguage === "JavaScript") {
+                      alert("Success! Your obfuscated code file will be automatically downloaded shortly.");
+                    }
                     else {
-                      alert("Success! Please wait until the obfuscated code is automatically downloaded!");
-                      
+                      alert("Please select a programming language and try again!");
                     }
                   }
                 else {
