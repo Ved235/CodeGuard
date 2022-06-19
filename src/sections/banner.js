@@ -19,7 +19,7 @@ const Banner = () => {
               Protect Your Code
             </Heading>
             <Text as="p">
-              We provide a tool which allows you to obfuscate your code in no time and shield it.
+              We provide a tool which allows you to obfuscate your code in no time and protect it.
             </Text>
 
           </Box>
