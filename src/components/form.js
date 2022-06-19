@@ -60,7 +60,8 @@ function Form() {
               if (validUrl.isUri(formData.codeLink)){
                   console.log('Looks like an URI');
                   if (page === FormTitles.length - 1) {
-                    alert("FORM SUBMITTED");
+                    alert("You have submitted the obfuscation form. Please wait until the obfuscated code is downloaded automatically.");
+                    
                     console.log(formData);
                   } else {
                     setPage((currPage) => currPage + 1);
