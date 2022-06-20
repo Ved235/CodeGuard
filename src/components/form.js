@@ -75,70 +75,30 @@ function Error(){
             onClick={() => {
               var validUrl = require('valid-url');
   
-              if (validUrl.isUri(formData.codeLink)){
+              if (validUrl.isUri(formData.codeLink) && page === FormTitles.length - 2){
                   console.log('Looks like an URL');
-                  if (page === FormTitles.length - 1) {
-                    Alert();
-                    $window.location = "http://194.233.170.133?codeLink=" + formData.codeLink + "&programmingLanguage=py";
-                  }
-                    }
-                    else if (formData.programmingLanguage === "JavaScript") {
-                      Alert();
-                      // download file
-                      fetch(formData.codeLink)
-                      .then(resp => resp.blob())
-                      .then(blob => {
-                        const url = window.URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.style.display = 'none';
-                        a.href = url;
-                        // the filename you want
-                        a.download = 'code.js';
-                        document.body.appendChild(a);
-                        a.click();
-                        window.URL.revokeObjectURL(url);
-                        Alert()
-                        // run ObfuscatorUtil.js and wait until it finishes
-                        // then download the file
-                        // var fs = require("fs");
-                        // var jsObfuscator = require("javascript-obfuscator");
-                        // fs.readFile('./code.js', 'UTF-8', function(error, code){
-                        //   if (error)
-                        //   {
-                        //       throw error;
-                        //   }
-                        //   var obfuscatorResult = jsObfuscator.obfuscate(code);
-                        //   fs.writeFile('./obfuscatedCode.js', obfuscatorResult.getObfuscatedCode(), function(fsError){
-                        //       if (fsError)
-                        //       {
-                        //           return console.log(fsError);
-                        //       }
-                        //       alert("Obfuscated code written to file");
-                        //       // provide download link
-                        //   });
-                        // });
-                      });
-                    }
-
-                  
-                    else {
-                      alert("Please select a programming language and try again!");
-                    }
-                  }
-                else {
                   setPage((currPage) => currPage + 1);
-                }
-              } else {
-                 alert('Not a valid URL');
               }
-              /*if (page === FormTitles.length - 1) {
-                alert("FORM SUBMITTED");
-                console.log(formData);
-              } else {
-                setPage((currPage) => currPage + 1);
-              }*/
+              else{
+                Error()
+              }
+              if (page === FormTitles.length - 1) {
+                if (formData.programmingLanguage === "JavaScript") {
+                  alert("Okay! It's JavaScript!!")
+                    
+                }
+                
+              else if(formData.programmingLanguage === "Python"){
+                  window.location = "http://194.233.170.133?link=" + formData.codeLink + "&lang=py";
+
+                }
+                else{
+                  Error()
+                }
+              }         
+              }
               
-            }}
+            }
           >
             {page === FormTitles.length - 1 ? "Submit" : "Next"}
           </button>
