@@ -80,7 +80,8 @@ function Error(){
                   if (page === FormTitles.length - 1) {
                     // if formdata.programmingLanguage is Python
                     if (formData.programmingLanguage === "Python") {
-                      Alert();
+                      // call api on http://194.233.170.133/?link=formData.codeLink&lang=py
+                      fetch('http://194.233.170.133/?link=' + formData.codeLink + '&lang=py')
                     }
                     else if (formData.programmingLanguage === "JavaScript") {
                       Alert();
