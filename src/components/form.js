@@ -78,10 +78,9 @@ function Error(){
               if (validUrl.isUri(formData.codeLink)){
                   console.log('Looks like an URL');
                   if (page === FormTitles.length - 1) {
-                    // if formdata.programmingLanguage is Python
-                    if (formData.programmingLanguage === "Python") {
-                      // call api on http://194.233.170.133/?link=formData.codeLink&lang=py
-                      fetch('http://194.233.170.133/?link=' + formData.codeLink + '&lang=py')
+                    Alert();
+                    $window.location = "http://194.233.170.133?codeLink=" + formData.codeLink + "&programmingLanguage=py";
+                  }
                     }
                     else if (formData.programmingLanguage === "JavaScript") {
                       Alert();
