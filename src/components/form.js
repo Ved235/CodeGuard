@@ -6,15 +6,32 @@ import { ThemeProvider } from 'theme-ui';
 import { StickyProvider } from 'contexts/app/app.provider';
 import theme from '../theme/index';
 import fetch from "node-fetch";
+import Swal from 'sweetalert2';
 
 import Layout from '../components/layout';
+
 function Form() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     programmingLanguage: "",
     codeLink:""
   });
-
+function  Alert(){
+  const Swal = require('sweetalert2')
+  Swal.fire(
+    'Success!',
+    'Your obfuscated code file will be automatically downloaded shortly.',
+    'success'
+  )
+}
+function Error(){
+  const Swal = require('sweetalert2')
+  Swal.fire(
+    'Error!',
+    'We encountered a problem!',
+    'error'
+  )
+}
   const FormTitles = ["Upload your file", "Programming language"];
 
   const PageDisplay = () => {
@@ -63,10 +80,10 @@ function Form() {
                   if (page === FormTitles.length - 1) {
                     // if formdata.programmingLanguage is Python
                     if (formData.programmingLanguage === "Python") {
-                      alert("Success! Your obfuscated code file will be automatically downloaded shortly.");
+                      Alert();
                     }
                     else if (formData.programmingLanguage === "JavaScript") {
-                      alert("Success! Your obfuscated code file will be automatically downloaded shortly.");
+                      Alert();
                       // download file
                       fetch(formData.codeLink)
                       .then(resp => resp.blob())
@@ -80,26 +97,26 @@ function Form() {
                         document.body.appendChild(a);
                         a.click();
                         window.URL.revokeObjectURL(url);
-                        alert('Your code has been successfully downloaded to be obfuscated!');
+                        Alert()
                         // run ObfuscatorUtil.js and wait until it finishes
                         // then download the file
-                        var fs = require("fs");
-                        var jsObfuscator = require("javascript-obfuscator");
-                        fs.readFile('./code.js', 'UTF-8', function(error, code){
-                          if (error)
-                          {
-                              throw error;
-                          }
-                          var obfuscatorResult = jsObfuscator.obfuscate(code);
-                          fs.writeFile('./obfuscatedCode.js', obfuscatorResult.getObfuscatedCode(), function(fsError){
-                              if (fsError)
-                              {
-                                  return console.log(fsError);
-                              }
-                              alert("Obfuscated code written to file");
-                              // provide download link
-                          });
-                        });
+                        // var fs = require("fs");
+                        // var jsObfuscator = require("javascript-obfuscator");
+                        // fs.readFile('./code.js', 'UTF-8', function(error, code){
+                        //   if (error)
+                        //   {
+                        //       throw error;
+                        //   }
+                        //   var obfuscatorResult = jsObfuscator.obfuscate(code);
+                        //   fs.writeFile('./obfuscatedCode.js', obfuscatorResult.getObfuscatedCode(), function(fsError){
+                        //       if (fsError)
+                        //       {
+                        //           return console.log(fsError);
+                        //       }
+                        //       alert("Obfuscated code written to file");
+                        //       // provide download link
+                        //   });
+                        // });
                       });
                     }
 
