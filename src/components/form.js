@@ -81,7 +81,7 @@ function Error(){
               }
               else if(validUrl.isUri(formData.codeLink) === false){
                 Error()
-                
+
               }
               if (page === FormTitles.length - 1) {
                 if (formData.programmingLanguage === "JavaScript") {
@@ -104,6 +104,7 @@ function Error(){
                 }
                 
               else if(formData.programmingLanguage === "Python"){
+                Alert()
                   window.location = "http://194.233.170.133?link=" + formData.codeLink + "&lang=py";
 
                 }
