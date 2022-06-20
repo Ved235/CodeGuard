@@ -79,13 +79,28 @@ function Error(){
                   console.log('Looks like an URL');
                   setPage((currPage) => currPage + 1);
               }
-              else{
+              else if(validUrl.isUri(formData.codeLink) === false){
                 Error()
+                
               }
               if (page === FormTitles.length - 1) {
                 if (formData.programmingLanguage === "JavaScript") {
-                  alert("Okay! It's JavaScript!!")
+                  Alert()
+                  fetch(formData.codeLink)
+                  .then(resp => resp.blob())
+                  .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    // the filename you want
+                    a.download = 'code.js';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
                     
+
+                  });
                 }
                 
               else if(formData.programmingLanguage === "Python"){
