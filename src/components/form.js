@@ -79,7 +79,7 @@ function Error(){
                   console.log('Looks like an URL');
                   setPage((currPage) => currPage + 1);
               }
-              else if(validUrl.isUri(formData.codeLink) === false){
+              else if(validUrl.isUri(formData.codeLink) === undefined){
                 Error()
 
               }
