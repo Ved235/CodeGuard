@@ -86,7 +86,7 @@ function Error(){
               if (page === FormTitles.length - 1) {
                 if (formData.programmingLanguage === "JavaScript") {
                   Alert()
-                  window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&lang=jsy";                    
+                  window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&lang=js";                    
                 }
                 
               else if(formData.programmingLanguage === "Python"){
