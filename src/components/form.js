@@ -1,129 +1,112 @@
 import React, { useState } from "react";
-import InfoOne from './infoOne';
+import InfoOne from "./infoOne";
 import InfoTwo from "./infoTwo";
-import styles from '../theme/obfuscate.module.css';
-import { ThemeProvider } from 'theme-ui';
-import { StickyProvider } from 'contexts/app/app.provider';
-import theme from '../theme/index';
+import styles from "../theme/obfuscate.module.css";
+import { ThemeProvider } from "theme-ui";
+import { StickyProvider } from "contexts/app/app.provider";
+import theme from "../theme/index";
 import fetch from "node-fetch";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
-import Layout from '../components/layout';
+import Layout from "../components/layout";
 
 function Form() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     programmingLanguage: "",
-    codeLink:""
+    codeLink: "",
   });
-function  Alert(){
-  const Swal = require('sweetalert2')
-  Swal.fire(
-    'Success!',
-    'Your obfuscated code file will be automatically downloaded shortly.',
-    'success'
-  )
-}
-function Error(){
-  const Swal = require('sweetalert2')
-  Swal.fire(
-    'Error!',
-    'We encountered a problem!',
-    'error'
-  )
-}
+  function Alert() {
+    const Swal = require("sweetalert2");
+    Swal.fire(
+      "Success!",
+      "Your obfuscated code file will be automatically downloaded shortly.",
+      "success"
+    );
+  }
+  function Error() {
+    const Swal = require("sweetalert2");
+    Swal.fire("Error!", "We encountered a problem!", "error");
+  }
   const FormTitles = ["Upload your file", "Programming language"];
 
   const PageDisplay = () => {
     if (page === 0) {
       return <InfoOne formData={formData} setFormData={setFormData} />;
-      
     } else if (page === 1) {
       return <InfoTwo formData={formData} setFormData={setFormData} />;
-    } 
+    }
   };
 
   return (
+    <Layout>
+      <div className={styles.app}>
+        <div className={styles.form}>
+          <div className={styles.formContainer}>
+            <div className={styles.header}>
+              <h1>{FormTitles[page]}</h1>
+            </div>
+            <div className={styles.body}>{PageDisplay()}</div>
+            <div className={styles.footer}>
+              <button
+                className={styles.button}
+                hidden={page == 0}
+                onClick={() => {
+                  setPage((currPage) => currPage - 1);
+                }}
+              >
+                Prev
+              </button>
+              <button
+                className={styles.button}
+                type="submit"
+                onClick={() => {
+                  var validUrl = require("valid-url");
 
-     <Layout>
-   <div className={styles.app}>
-    <div className={styles.form}>
-      <div className="progressbar">
-        <div
-          style={{ width: page === 0 ? "33.3%" : "100%" }}
-        ></div>
-      </div>
-      <div className={styles.formContainer}>
-        <div className={styles.header}>
-          <h1>{FormTitles[page]}</h1>
-        </div>
-        <div className={styles.body}>{PageDisplay()}</div>
-        <div className={styles.footer}>
-          <button
-           className={styles.button}
-         
-            hidden={page == 0}
-            onClick={() => {
-              setPage((currPage) => currPage - 1);
-            }}
-          >
-            Prev
-          </button>
-          <button
-          className={styles.button}
-          type="submit"
-            onClick={() => {
-              var validUrl = require('valid-url');
-  
-              if (validUrl.isUri(formData.codeLink) && page === FormTitles.length - 2){
-                  console.log('Looks like an URL');
-                  setPage((currPage) => currPage + 1);
-              }
-              else if(validUrl.isUri(formData.codeLink) === undefined){
-                Error()
-
-              }
-              if (page === FormTitles.length - 1) {
-                if (formData.programmingLanguage === "JavaScript") {
-                  Alert()
-                  fetch(formData.codeLink)
-                  .then(resp => resp.blob())
-                  .then(blob => {
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.style.display = 'none';
-                    a.href = url;
-                    // the filename you want
-                    a.download = 'code.js';
-                    document.body.appendChild(a);
-                    a.click();
-                    window.URL.revokeObjectURL(url);
-                    
-
-                  });
-                }
-                
-              else if(formData.programmingLanguage === "Python"){
-                Alert()
-                  window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&lang=py";
-
-                }
-                else{
-                  Error()
-                }
-              }         
-              }
-              
-            }
-          >
-            {page === FormTitles.length - 1 ? "Submit" : "Next"}
-          </button>
+                  if (
+                    validUrl.isUri(formData.codeLink) &&
+                    page === FormTitles.length - 2
+                  ) {
+                    console.log("Looks like an URL");
+                    setPage((currPage) => currPage + 1);
+                  } else if (validUrl.isUri(formData.codeLink) === undefined) {
+                    Error();
+                  }
+                  if (page === FormTitles.length - 1) {
+                    if (formData.programmingLanguage === "JavaScript") {
+                      Alert();
+                      fetch(formData.codeLink)
+                        .then((resp) => resp.blob())
+                        .then((blob) => {
+                          const url = window.URL.createObjectURL(blob);
+                          const a = document.createElement("a");
+                          a.style.display = "none";
+                          a.href = url;
+                          // the filename you want
+                          a.download = "code.js";
+                          document.body.appendChild(a);
+                          a.click();
+                          window.URL.revokeObjectURL(url);
+                        });
+                    } else if (formData.programmingLanguage === "Python") {
+                      Alert();
+                      window.location =
+                        "https://api.codeguard.tech?link=" +
+                        formData.codeLink +
+                        "&lang=py";
+                    } else {
+                      Error();
+                    }
+                  }
+                }}
+              >
+                {page === FormTitles.length - 1 ? "Submit" : "Next"}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-  
-            </Layout>
+    </Layout>
   );
 }
 

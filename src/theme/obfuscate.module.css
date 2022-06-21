@@ -1,17 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 .app {
-  background: linear-gradient(140.54deg, #608D00 0%, #D30000 72.37%), linear-gradient(58.72deg, #0029FF 0%, #8FFF00 100%), radial-gradient(100% 164.72% at 100% 100%, #6100FF 0%, #00FF57 100%), radial-gradient(100% 148.07% at 0% 0%, #FFF500 0%, #51D500 100%);
+  background: linear-gradient(140.54deg, #608d00 0%, #d30000 72.37%),
+    linear-gradient(58.72deg, #0029ff 0%, #8fff00 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
   background-blend-mode: color-dodge, overlay, difference, normal;
   width: 100vw;
   height: 750px;
   display: grid;
-  
+  text-align: center;
   place-items: center;
-  
 }
-
-
 
 .form {
   width: 100%;
@@ -43,6 +43,7 @@
 
 .body {
   flex: 60%;
+  text-align: center;
 }
 
 .footer {
@@ -57,17 +58,17 @@
   height: 40px;
   background-color: transparent;
   font-weight: bold;
-  color: #8D448B;  
-  border: 2px solid #8D448B;
+  color: #8d448b;
+  border: 2px solid #8d448b;
   border-radius: 5px;
   cursor: pointer;
   padding: 10px 5px;
   margin: 10px 5px;
   margin: 5px;
 }
-.button:hover{
-  background-color: #8D448B;
-  color:white;  
+.button:hover {
+  background-color: #8d448b;
+  color: white;
 }
 
 .eachContainer {
@@ -80,22 +81,6 @@
   text-align: center;
 }
 
-
-
-/* PROGRESS BAR */
-.progressbar {
-  width: 400px;
-  height: 10px;
-  background-color: white;
-  margin-bottom: 50px;
-}
-
-.progressbar div {
-  width: 33.3%;
-  height: 100%;
-  background-color: rgb(98, 0, 255);
-}
-
 .input {
   border: 2px solid rgb(98, 0, 255);
   border-radius: 5px;
@@ -104,10 +89,8 @@
   height: 40px;
   padding-left: 5px;
   font-size: 20px;
-
 }
 
 .input:focus {
   border: 3px solid rgb(98, 0, 255);
-  
 }

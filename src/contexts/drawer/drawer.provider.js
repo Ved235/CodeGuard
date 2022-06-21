@@ -1,12 +1,12 @@
-import React, { useReducer } from 'react';
-import { DrawerContext } from './drawer.context';
+import React, { useReducer } from "react";
+import { DrawerContext } from "./drawer.context";
 const initialState = {
   isOpen: false,
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'TOGGLE':
+    case "TOGGLE":
       return {
         ...state,
         isOpen: !state.isOpen,

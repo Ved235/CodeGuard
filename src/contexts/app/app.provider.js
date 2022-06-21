@@ -1,5 +1,5 @@
-import { useCreateContext } from '../create-context';
-import { reducer, initialState } from './app.reducer';
+import { useCreateContext } from "../create-context";
+import { reducer, initialState } from "./app.reducer";
 
 const [state, useDispatch, provider] = useCreateContext(initialState, reducer);
 export const useStickyState = state;

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Heading, Text } from 'theme-ui';
+import React from "react";
+import { Box, Heading, Text } from "theme-ui";
 
 const BlockTitle = (props) => {
   return (

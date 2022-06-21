@@ -1,12 +1,12 @@
-import React from 'react';
-import { Flex, Box, IconButton } from 'theme-ui';
+import React from "react";
+import { Flex, Box, IconButton } from "theme-ui";
 
 export default function List({ items = [], parentStyle, childStyle }) {
   return (
     <Box
       as="ul"
       sx={{
-        listStyleType: 'none',
+        listStyleType: "none",
         margin: 0,
         padding: 0,
         ...parentStyle,
@@ -16,9 +16,9 @@ export default function List({ items = [], parentStyle, childStyle }) {
         <Flex as="li" sx={{ ...childStyle }} key={i}>
           <IconButton
             sx={{
-              color: '#FFC059',
-              width: 'auto',
-              height: 'auto',
+              color: "#FFC059",
+              width: "auto",
+              height: "auto",
               padding: 0,
               fontSize: 30,
               marginRight: 2,

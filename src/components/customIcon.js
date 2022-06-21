@@ -1,10 +1,9 @@
-import React from 'react';
-
+import React from "react";
 
 export const Github = ({
-  color = 'currentColor',
-  width = '15px',
-  height = '15px',
+  color = "currentColor",
+  width = "15px",
+  height = "15px",
 }) => {
   return (
     <svg
@@ -21,5 +20,3 @@ export const Github = ({
     </svg>
   );
 };
-
-

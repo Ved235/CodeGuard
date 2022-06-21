@@ -1,5 +1,5 @@
-import React from 'react';
-import { BaseAccordion } from './base-accordion';
+import React from "react";
+import { BaseAccordion } from "./base-accordion";
 import {
   AccordionButton,
   AccordionItem,
@@ -7,7 +7,7 @@ import {
   single,
   preventClose,
   combineReducers,
-} from './shared';
+} from "./shared";
 
 export default function Accordion({ items, ...props }) {
   return (
@@ -24,7 +24,7 @@ export default function Accordion({ items, ...props }) {
             >
               <AccordionButton onClick={() => handleItemClick(index)}>
                 {item.title}
-                <span>{openIndexes.includes(index) ? '👇' : '👈'}</span>
+                <span>{openIndexes.includes(index) ? "👇" : "👈"}</span>
               </AccordionButton>
               <AccordionContents isOpen={openIndexes.includes(index)}>
                 {item.contents}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class BaseAccordion extends React.Component {
   static defaultProps = {
@@ -20,7 +20,7 @@ class BaseAccordion extends React.Component {
       (state) => {
         const actualState = this.getState(state);
         const changesObject =
-          typeof changes === 'function' ? changes(actualState) : changes;
+          typeof changes === "function" ? changes(actualState) : changes;
         allChanges = this.props.stateReducer(actualState, changesObject);
         return allChanges;
       },
@@ -34,13 +34,13 @@ class BaseAccordion extends React.Component {
     this.internalSetState((state) => {
       const closing = state.openIndexes.includes(index);
       return {
-        type: closing ? 'closing' : 'opening',
+        type: closing ? "closing" : "opening",
         openIndexes: closing
           ? state.openIndexes.filter((i) => i !== index)
           : [...state.openIndexes, index],
       };
     });
-    console.log('clicked');
+    console.log("clicked");
   };
   render() {
     return this.props.children({
