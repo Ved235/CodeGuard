@@ -24,7 +24,7 @@ const BoostAgencies = () => {
                 </Text>
                 <Text as="li">
                   <IoIosCheckmarkCircle />
-                  Python (.py) and JavaScript (.js)
+                  CodeGuard supports Python (.py) and JavaScript (.js)
                 </Text>
                 <Text as="li">
                   <IoIosCheckmarkCircle />
