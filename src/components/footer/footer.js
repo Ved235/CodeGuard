@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box, Text, Container } from 'theme-ui';
-import { Link } from '../link';
+import {Link} from 'theme-ui'
 import Logo from '../logo';
 export default function Footer() {
   return (
@@ -16,15 +16,20 @@ export default function Footer() {
           justifyContent: ['center', null, null, 'space-between'],
           flexDirection: ['column', null, null, null, 'row'],
           paddingTop: [30, 40],
-   
+
         }}
       >
         <Box sx={styles.middle}>
           <Logo />
-          <Text as="p" sx={styles.right}> 
+          <Text as="p" sx={styles.left}> 
             &copy; {new Date().getFullYear()} - Design &
             Developed by Vedant and Omar
           </Text>
+
+
+        </Box>
+        <Box sx={styles.right}>
+         <Text>Made using <Link href='https://www.linode.com/' sx={{color: '#0000ff'}}>Linode</Link> for <Link href='https://hashnode.com/' sx={{color:'#0000ff'}}>Hashnode</Link> Hackathon</Text>
         </Box>
 
       </Container>
@@ -56,15 +61,6 @@ const styles = {
         color: 'primary',
       },
     },
-    'a+a': {
-      marginLeft: '30px',
-    },
+
   },
 };
-<Box sx={styles.right}>
-<Link path="/" label="Home" />
-<Link path="/" label="Adversite" />
-<Link path="/" label="Supports" />
-<Link path="/" label="Marketing" />
-<Link path="/" label="FAQ" />
-</Box>
