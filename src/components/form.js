@@ -79,8 +79,9 @@ function Error(){
                   console.log('Looks like an URL');
                   setPage((currPage) => currPage + 1);
               }
-              else{
+              else if(validUrl.isUri(formData.codeLink) === false){
                 Error()
+
               }
               if (page === FormTitles.length - 1) {
                 if (formData.programmingLanguage === "JavaScript") {
@@ -103,7 +104,8 @@ function Error(){
                 }
                 
               else if(formData.programmingLanguage === "Python"){
-                  window.location = "http://194.233.170.133?link=" + formData.codeLink + "&lang=py";
+                Alert()
+                  window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&lang=py";
 
                 }
                 else{
