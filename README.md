@@ -52,7 +52,7 @@ window.location = "https://api.codeguard.tech/?link=https://gist.githubuserconte
 
 ### Hosting the API on your machine
 
-1. Clone the repository on your local machine:
+- Clone the repository on your local machine:
 
 `git clone https://github.com/Omar8345/CodeGuard`
 
@@ -60,11 +60,11 @@ Next, head into `CodeGuard/API` and open your favorite IDE, if you use **Visual 
 
 `code .`
 
-2. And it will open up **VSC** in the folder, just run in the terminal the following command:
+- And it will open up **VSC** in the folder, just run in the terminal the following command:
 
 `$env:FLASK_APP="__init__.py && flask run"`
 
-3. You should see a local link, head into it or [http://127.0.0.1:5000/](http://127.0.0.1:5000/) and you should find some kind of error, just simply ignore it, now add the `link` and `lang` parameters value and you should be good to go!
+- You should see a local link, head into it or [http://127.0.0.1:5000/](http://127.0.0.1:5000/) and you should find some kind of error, just simply ignore it, now add the `link` and `lang` parameters value and you should be good to go!
 
 Read more at: [Introducing CodeGuard](https://omardevblog.toolsandapps4us.site/codeguard)
 
