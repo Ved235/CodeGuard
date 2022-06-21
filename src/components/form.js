@@ -105,7 +105,7 @@ function Error(){
                 
               else if(formData.programmingLanguage === "Python"){
                 Alert()
-                  window.location = "http://194.233.170.133?link=" + formData.codeLink + "&lang=py";
+                  window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&lang=py";
 
                 }
                 else{
