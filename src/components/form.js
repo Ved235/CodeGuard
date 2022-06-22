@@ -65,10 +65,20 @@ function Form() {
 
                   if (
                     validUrl.isUri(formData.codeLink) &&
-                    page === FormTitles.length - 2
+                    page === FormTitles.length - 2 
                   ) {
-                    console.log("Looks like an URL");
+                    if(formData.codeLink.slice(-2) === "js"){
+                    formData.programmingLanguage = 'JavaScript'
                     setPage((currPage) => currPage + 1);
+                    }
+                    else if(formData.codeLink.slice(-2) === "py"){
+                      formData.programmingLanguage = 'Python'
+                      console.log(FormData.programmingLanguage)
+                      setPage((currPage) => currPage + 1);
+                    }
+                    else{
+                    Error();
+                    }
                   } else if (validUrl.isUri(formData.codeLink) === undefined) {
                     Error();
                   }

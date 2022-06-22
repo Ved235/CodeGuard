@@ -1,11 +1,11 @@
 import { Select } from "theme-ui";
 import styles from "../theme/obfuscate.module.css";
 function InfoTwo({ formData, setFormData }) {
-  console.log(formData);
+console.log(formData.programmingLanguage)
   return (
     <div className={styles.eachContainer}>
       <Select
-        defaultValue="-- Select Programming Language --"
+        defaultValue={formData.programmingLanguage}
         sx={style.input}
         onChange={(event) =>
           setFormData({ ...formData, programmingLanguage: event.target.value })
