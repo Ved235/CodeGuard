@@ -7,6 +7,7 @@ app = flask.Flask(__name__)
 @app.route('/')
 def api():
     link = flask.request.args.get('link')
+    redirect = flask.request.args.get('redirect')
     
     if link == None:
         return flask.render_template('index.html')
@@ -24,6 +25,11 @@ def api():
         return flask.render_template('index.html')
     
     return flask.render_template('index.html')
+
+    if redirect == None or redirect == 'true':
+        return flask.render_template('index.html')
+    elif redirect == 'false':
+        None
 
 
 
