@@ -86,7 +86,7 @@ function Form() {
                     if (formData.programmingLanguage === "JavaScript") {
                       if(formData.codeLink.slice(-3) === ".js" || formData.codeLink.slice(-4) === ".js/"){
                         Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
-                        window.location = "https://api.codeguard.tech?link=" + formData.codeLink;
+                        window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
                       }
                       else{
                         Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
@@ -95,7 +95,7 @@ function Form() {
                     } else if (formData.programmingLanguage === "Python") {
                       Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
                       if (formData.codeLink.slice(-3) === ".py" || formData.codeLink.slice(-4) === ".py/") {
-                        window.location = "https://api.codeguard.tech?link=" + formData.codeLink;
+                        window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
                       }
                       else{
                         Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
