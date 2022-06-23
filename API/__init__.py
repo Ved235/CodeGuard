@@ -10,16 +10,20 @@ def api():
     lang = flask.request.args.get('lang')
     
     return flask.render_template('index.html')
-
-    if lang == "py":
-        os.system("cd uploads && wget -O code.py " + link)
-        os.system("python -OO -m py_compile code.py")
-        os.system("cd __pycache__ && mv code.cpython-* ~/api/uploads/code.pyc")
-        return send_from_directory(directory='uploads', path='~/api/', filename='code.pyc', as_attachment=True)
-    elif lang == "js":
-        os.system("cd uploads && wget -O code.js " + link)
-        os.system("cd uploads && node obfuscate.js")
-        return send_from_directory(directory='uploads', path='~/api/', filename='obfuscatedCode.js', as_attachment=True)
+    
+    if link.endswith('.py/') or link.endswith('.py') or link.endswith('.js/') or link.endswith('.js'):
+        if lang == "py":
+            os.system("cd uploads && wget -O code.py " + link)
+            os.system("python -OO -m py_compile code.py")
+            os.system("cd __pycache__ && ,v code.cpython-* ~/api/uploads/code.pyc")
+            return send_from_directory(directory='uploads', path='~/api/', filename='code.pyc', as_attachment=True)
+        elif lang == "js":
+            os.system("cd uploads && wget -O code.js " + link)
+            os.system("node obfuscate.js")
+            return send_from_directory(directory='uploads', path='~/api/', filename='obfuscatedCode.js', as_attachment=True)
+        return flask.render_template('index.html')
+    else:
+        return flask.render_template('index.html')
 
 
 if __name__ == '__main__':
