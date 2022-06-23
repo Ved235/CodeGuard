@@ -7,6 +7,9 @@ app = flask.Flask(__name__)
 @app.route('/')
 def api():
     link = flask.request.args.get('link')
+    
+    if link == None:
+        return flask.render_template('index.html')
        
     if link.endswith('.py/') or link.endswith('.py'):
         os.system("cd uploads && wget -O code.py " + link)
@@ -19,8 +22,9 @@ def api():
         os.system("node obfuscate.js")
         return send_from_directory(directory='uploads', path='~/api/', filename='obfuscatedCode.js', as_attachment=True)
         return flask.render_template('index.html')
-    else:
-        return flask.render_template('index.html')
+    
+    return flask.render_template('index.html')
+
 
 
 if __name__ == '__main__':
