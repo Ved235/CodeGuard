@@ -8,6 +8,8 @@ app = flask.Flask(__name__)
 def api():
     link = flask.request.args.get('link')
     lang = flask.request.args.get('lang')
+    
+    return flask.render_template('index.html')
 
     if lang == "py":
         os.system("cd uploads && wget -O code.py " + link)
