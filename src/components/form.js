@@ -16,17 +16,17 @@ function Form() {
     programmingLanguage: "",
     codeLink: "",
   });
-  function Alert() {
+  function Alert(alertHeading, alertMessage) {
     const Swal = require("sweetalert2");
     Swal.fire(
-      "Success!",
-      "Your obfuscated code file will be automatically downloaded shortly.",
+      alertHeading,
+      alertMessage,
       "success"
     );
   }
-  function Error() {
+  function Error(errorHeading, errorMessage) {
     const Swal = require("sweetalert2");
-    Swal.fire("Error!", "We encountered a problem!", "error");
+    Swal.fire(errorHeading, errorMessage, "error");
   }
   const FormTitles = ["Upload your file", "Programming language"];
 
@@ -67,37 +67,41 @@ function Form() {
                     validUrl.isUri(formData.codeLink) &&
                     page === FormTitles.length - 2 
                   ) {
-                    if(formData.codeLink.slice(-2) === "js"){
+                    if(formData.codeLink.slice(-3) === ".js" || formData.codeLink.slice(-4) === ".js/"){
                     formData.programmingLanguage = 'JavaScript'
                     setPage((currPage) => currPage + 1);
                     }
-                    else if(formData.codeLink.slice(-2) === "py"){
+                    else if(formData.codeLink.slice(-3) === ".py" || formData.codeLink.slice(-4) === ".py/"){
                       formData.programmingLanguage = 'Python'
                       console.log(FormData.programmingLanguage)
                       setPage((currPage) => currPage + 1);
                     }
                     else{
-                    Error();
+                    Error("Error!", "Invalid URL. (URL submitted, but not valid)");
                     }
                   } else if (validUrl.isUri(formData.codeLink) === undefined) {
-                    Error();
+                    Error("Error!", "Invalid URL. (No URL submitted)");
                   }
                   if (page === FormTitles.length - 1) {
                     if (formData.programmingLanguage === "JavaScript") {
-                      Alert();
-                      window.location =
-                      "https://api.codeguard.tech?link=" +
-                      formData.codeLink +
-                      "&lang=js";
+                      if(formData.codeLink.slice(-3) === ".js" || formData.codeLink.slice(-4) === ".js/"){
+                        Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
+                        window.location = "https://api.codeguard.tech?link=" + formData.codeLink;
+                      }
+                      else{
+                        Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
+                      }
                   
                     } else if (formData.programmingLanguage === "Python") {
-                      Alert();
-                      window.location =
-                        "https://api.codeguard.tech?link=" +
-                        formData.codeLink +
-                        "&lang=py";
+                      Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
+                      if (formData.codeLink.slice(-3) === ".py" || formData.codeLink.slice(-4) === ".py/") {
+                        window.location = "https://api.codeguard.tech?link=" + formData.codeLink;
+                      }
+                      else{
+                        Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
+                      }
                     } else {
-                      Error();
+                      Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
                     }
                   }
                 }}
