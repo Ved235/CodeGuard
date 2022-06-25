@@ -20,6 +20,8 @@ Upon the user selection, it will call the API located in `api.codeguard.tech` pr
 
 As soon as the **API has been called**, it will start getting the file and obfuscating it, as soon as the **obfuscated file is ready, it will be automatically downloaded at the user side**.
 
+As update 1.1, now the API only needs 1 required parameter (`link`) and one additional optional parameter (`redirect`), check the article linked below to stay up-to-date!
+
 ## The tech-stack I used + Why did I use it?
 
 - **[Next.js](https://nextjs.org/)** - *Making the front-end design of the website*
