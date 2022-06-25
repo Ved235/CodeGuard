@@ -43,13 +43,13 @@ As update 1.1, now the API only needs 1 required parameter (`link`) and one addi
 It's really simple to use our API, in JavaScript, it only requires one line of code!
 
 ```js
-window.location = "https://api.codeguard.tech/?link=<code link here>&lang=<js or py>
+window.location = "https://api.codeguard.tech/?link=<code link here>
 ```
 
 For example:
 
 ```js
-window.location = "https://api.codeguard.tech/?link=https://gist.githubusercontent.com/Omar8345/1038a82e7db5f81d0722a4f2ab701924/raw/b213490f419b1d67de6a6a1647557934b97fc1ef/nicecode.js&lang=js
+window.location = "https://api.codeguard.tech/?link=https://gist.githubusercontent.com/Omar8345/1038a82e7db5f81d0722a4f2ab701924/raw/b213490f419b1d67de6a6a1647557934b97fc1ef/nicecode.js
 ```
 
 ### Hosting the API on your machine
@@ -66,7 +66,7 @@ Next, head into `CodeGuard/API` and open your favorite IDE, if you use **Visual 
 
 `$env:FLASK_APP="__init__.py && flask run"`
 
-- You should see a local link, head into it or [http://127.0.0.1:5000/](http://127.0.0.1:5000/) and you should find some kind of error, just simply ignore it, now add the `link` and `lang` parameters value and you should be good to go!
+- You should see a local link, head into it or [http://127.0.0.1:5000/](http://127.0.0.1:5000/) and you should find some kind of error, just simply ignore it, now add the `link` parameter value and you should be good to go!
 
 Read more at: [Introducing CodeGuard](https://omardevblog.toolsandapps4us.site/codeguard)
 
