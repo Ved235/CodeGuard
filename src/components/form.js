@@ -99,7 +99,7 @@ function Form() {
                       }
                     }
                     else if (formData.programmingLanguage === "JavaScript") {
-                      if(formData.codeLink.slice(-3) === ".js" || formData.codeLink.slice(-4) === ".js/"){
+                      if(formData.codeLink.slice(-3) === ".js" || formData.codeLink.slice(-4) === ".js/" && formData.codeLink.slice(0,19) !== "https://github.com/"){
                         Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
                         window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
                       }
@@ -107,7 +107,7 @@ function Form() {
                         Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
                       }
                     } else if (formData.programmingLanguage === "Python") {
-                      if (formData.codeLink.slice(-3) === ".py" || formData.codeLink.slice(-4) === ".py/" && formData.codeLink.slice(0,19) === "https://github.com") {
+                      if (formData.codeLink.slice(-3) === ".py" || formData.codeLink.slice(-4) === ".py/" && formData.codeLink.slice(0,19) !== "https://github.com/") {
                         Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
                         window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
                       }
