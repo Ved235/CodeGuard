@@ -59,7 +59,7 @@ def api():
             os.system("zip -r code.zip zipcode")  
             os.system("rm -r zipcode")
             os.system("mv code.zip ./uploads/code.zip")
-            return send_from_directory(directory="uploads", filename="code.zip", as_attachment=True)
+            return send_from_directory(directory="uploads", path="~/api", filename="code.zip", as_attachment=True)
         x.close()
         os.system("rm file_structure.txt")
         os.system("cd uploads && rm code.zip")
