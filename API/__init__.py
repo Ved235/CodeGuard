@@ -12,17 +12,19 @@ def api():
     if link == None:
         return flask.render_template('index.html')
        
-    if link.endswith('.py/') or link.endswith('.py'):
+    if link.startswith == "https://github.com/" == False and link.endswith('.py/') or link.endswith('.py'):
         os.system("cd uploads && wget -O code.py " + link)
         os.system("python -OO -m py_compile code.py")
         os.system("cd __pycache__ && ,v code.cpython-* ~/api/uploads/code.pyc")
         return send_from_directory(directory='uploads', path='~/api/', filename='code.pyc', as_attachment=True)
+        os.system("cd uploads && rm code.py code.pyc")
         if redirect == "true" or None:
             return flask.render_template('index.html')
-    elif link.endswith('.js/') or link.endswith('.js'):
+    elif link.startswith == "https://github.com/" == False and link.endswith('.js/') or link.endswith('.js'):
         os.system("cd uploads && wget -O code.js " + link)
         os.system("node obfuscate.js")
         return send_from_directory(directory='uploads', path='~/api/', filename='obfuscatedCode.js', as_attachment=True)
+        os.system("cd uploads && rm code.js obfuscatedCode.js")
         if redirect == "true" or None:
             return flask.render_template('index.html')
     elif link.startswith('https://github.com/') or link.startswith('http://github.com/'):
