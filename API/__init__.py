@@ -60,6 +60,7 @@ def api():
             return send_from_directory(directory="uploads", filename="code.zip", as_attachment=True)
         x.close()
         os.system("rm file_structure.txt")
+        os.system("cd uploads && rm code.zip")
     
 
 
