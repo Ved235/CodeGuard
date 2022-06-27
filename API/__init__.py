@@ -17,19 +17,16 @@ def api():
         os.system("python -OO -m py_compile code.py")
         os.system("cd __pycache__ && ,v code.cpython-* ~/api/uploads/code.pyc")
         return send_from_directory(directory='uploads', path='~/api/', filename='code.pyc', as_attachment=True)
-        return flask.render_template('index.html')
+        if redirect == "true" or None:
+            return flask.render_template('index.html')
     elif link.endswith('.js/') or link.endswith('.js'):
         os.system("cd uploads && wget -O code.js " + link)
         os.system("node obfuscate.js")
         return send_from_directory(directory='uploads', path='~/api/', filename='obfuscatedCode.js', as_attachment=True)
-        return flask.render_template('index.html')
+        if redirect == "true" or None:
+            return flask.render_template('index.html')
     
-    return flask.render_template('index.html')
 
-    if redirect == None or redirect == 'true':
-        return flask.render_template('index.html')
-    elif redirect == 'false':
-        None
 
 
 
