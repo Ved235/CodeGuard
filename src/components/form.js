@@ -99,7 +99,7 @@ function Form() {
                   
                     } else if (formData.programmingLanguage === "Python") {
                       Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
-                      if (formData.codeLink.slice(-3) === ".py" || formData.codeLink.slice(-4) === ".py/") {
+                      if (formData.codeLink.slice(-3) === ".py" || formData.codeLink.slice(-4) === ".py/" && formData.codeLink.slice(0,19) === "https://github.com") {
                         window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
                       }
                       else{
