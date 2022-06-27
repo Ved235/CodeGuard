@@ -14,7 +14,7 @@ function InfoOne({ formData, setFormData }) {
         <a style={{ color: "blue" }} href="https://github.com/new">
         create a GitHub Repository 
         </a>{" "}
-        paste your GitHub Repository link below!
+        and paste your GitHub Repository link below!
       </Text>
 
       <Input
