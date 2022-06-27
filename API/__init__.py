@@ -47,22 +47,16 @@ def api():
                 elif line.endswith(".js\n"):
                     print("Obfuscating Javascript file: " + line)
                     filepath = line.replace("\n", "")
-                    # remove first character from the line
                     filepath = filepath[1:]
                     filename = filepath.split("/")[-1]
                     filepath_nofilename = filepath.replace(filename, "")
                     os.system("node obfuscateGit.js ./zipcode" + filepath + " ./zipcode" + filepath_nofilename + "tempcode.js")
-                    # remove old file
                     os.system("cd zipcode/" + filepath_nofilename + " && rm " + filename)
-                    # rename tempcode.js to filename
                     os.system("cd zipcode/" + filepath_nofilename + " && mv tempcode.js " + filename)
-            # zip the folder
+            os.system("cd zipcode && rm -r .git")
             os.system("zip -r code.zip zipcode")  
-            # remove the folder
             os.system("rm -r zipcode")
-            # move zip file to uploads
             os.system("mv code.zip ./uploads/code.zip")
-            # download zip file for user using tkinter
             return send_from_directory(directory="uploads", filename="code.zip", as_attachment=True)
     
 
