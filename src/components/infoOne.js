@@ -10,12 +10,16 @@ function InfoOne({ formData, setFormData }) {
           GitHub Gist
         </a>{" "}
         and paste your JavaScript or your Python code, open your code in raw
-        view and paste the link in the address bar below
+        view and paste the link in the address bar below OR{" "}
+        <a style={{ color: "blue" }} href="https://github.com/new">
+        create a GitHub Repository 
+        </a>{" "}
+        paste your GitHub Repository link below!
       </Text>
 
       <Input
         sx={style.input}
-        placeholder="GitHub Gist Link"
+        placeholder="GitHub Gist or GitHub Repo Link"
         value={formData.codeLink}
         onChange={(e) => {
           setFormData({ ...formData, codeLink: e.target.value });
