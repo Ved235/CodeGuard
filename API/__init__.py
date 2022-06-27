@@ -25,6 +25,45 @@ def api():
         return send_from_directory(directory='uploads', path='~/api/', filename='obfuscatedCode.js', as_attachment=True)
         if redirect == "true" or None:
             return flask.render_template('index.html')
+    elif link.startswith('https://github.com/') or link.startswith('http://github.com/'):
+        os.system("git clone " + link + " zipcode")
+        os.system("cd zipcode && find . -type f -exec echo {} \; > ~/api/file_structure.txt")
+        with open("file_structure.txt", "r") as x:
+            for line in x:
+                print(line)
+                if line.endswith(".py\n"):
+                    print("Obfuscating Python file: " + line)
+                    line = line.replace("\n", "")
+                    filename = line.split("/")[-1]
+                    filename_noext = filename.split(".")[0]
+                    print("Filename: " + filename)
+                    filepath = line
+                    filepath = filepath.replace(filename, "")  
+                    print("Filepath: " + filepath)
+                    filepath = filepath.replace(".", "")
+                    os.system("python3 -OO -m py_compile ./zipcode/" + filepath + "/" + filename)
+                    os.system("cd zipcode/" + filepath + "/__pycache__ && mv *.cpython-* ~/api/zipcode/" + filepath + "/" + filename_noext + ".pyc && cd .. && rm -d __pycache__")
+                    os.system("cd ~/api/zipcode/" + filepath + "/ && rm " + filename)
+                elif line.endswith(".js\n"):
+                    print("Obfuscating Javascript file: " + line)
+                    filepath = line.replace("\n", "")
+                    # remove first character from the line
+                    filepath = filepath[1:]
+                    filename = filepath.split("/")[-1]
+                    filepath_nofilename = filepath.replace(filename, "")
+                    os.system("node obfuscateGit.js ./zipcode" + filepath + " ./zipcode" + filepath_nofilename + "tempcode.js")
+                    # remove old file
+                    os.system("cd zipcode/" + filepath_nofilename + " && rm " + filename)
+                    # rename tempcode.js to filename
+                    os.system("cd zipcode/" + filepath_nofilename + " && mv tempcode.js " + filename)
+            # zip the folder
+            os.system("zip -r code.zip zipcode")  
+            # remove the folder
+            os.system("rm -r zipcode")
+            # move zip file to uploads
+            os.system("mv code.zip ./uploads/code.zip")
+            # download zip file for user using tkinter
+            return send_from_directory(directory="uploads", filename="code.zip", as_attachment=True)
     
 
 
