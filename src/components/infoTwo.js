@@ -14,6 +14,7 @@ console.log(formData.programmingLanguage)
         <option>-- Select Programming Language --</option>
         <option>Python</option>
         <option>JavaScript</option>
+        <option>GitHub Repository (.py and .js)</option>
       </Select>
     </div>
   );
