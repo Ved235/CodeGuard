@@ -76,6 +76,11 @@ function Form() {
                       console.log(FormData.programmingLanguage)
                       setPage((currPage) => currPage + 1);
                     }
+                    // if url starts with https://github.com, proceed
+                    else if(formData.codeLink.slice(0,19) === "https://github.com/"){
+                      formData.programmingLanguage = 'GitHub Repository (.py and .js)'
+                      setPage((currPage) => currPage + 1);
+                  }
                     else{
                     Error("Error!", "Invalid URL. (URL submitted, but not valid)");
                     }
@@ -100,9 +105,16 @@ function Form() {
                       else{
                         Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
                       }
-                    } else {
-                      Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
                     }
+                      else if (formData.programmingLanguage === "GitHub Repository (.py and .js)") {
+                        Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly! (as a ZIP file)");
+                        if (formData.codeLink.slice(0,19) === "https://github.com/") {
+                          window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
+                        }
+                        else {
+                          Error("Error!", "It seems you choosed the wrong programming language (selection), it's better to proceed with the automatic selection.");
+                        }
+                      }
                   }
                 }}
               >
