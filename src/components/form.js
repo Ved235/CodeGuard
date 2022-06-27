@@ -92,6 +92,7 @@ function Form() {
                     if (formData.programmingLanguage === "GitHub Repository (.py and .js)") {
                       if (formData.codeLink.slice(0,19) === "https://github.com/") {
                         Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly! (as a ZIP file)");
+                        window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
                       }
                       else {
                         Error("Error!", "It seems that you did not submit a valid GitHub repository URL. (Please submit a valid GitHub repository URL)");
@@ -106,8 +107,8 @@ function Form() {
                         Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
                       }
                     } else if (formData.programmingLanguage === "Python") {
-                      Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
                       if (formData.codeLink.slice(-3) === ".py" || formData.codeLink.slice(-4) === ".py/" && formData.codeLink.slice(0,19) === "https://github.com") {
+                        Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
                         window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
                       }
                       else {
