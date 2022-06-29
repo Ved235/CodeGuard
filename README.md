@@ -20,6 +20,8 @@ Upon the user selection, it will call the API located in `api.codeguard.tech` pr
 
 As soon as the **API has been called**, it will start getting the file and obfuscating it, as soon as the **obfuscated file is ready, it will be automatically downloaded at the user side**.
 
+As update 1.1, now the API only needs 1 required parameter (`link`) and one additional optional parameter (`redirect`), check the article linked below to stay up-to-date!
+
 ## The tech-stack I used + Why did I use it?
 
 - **[Next.js](https://nextjs.org/)** - *Making the front-end design of the website*
@@ -41,13 +43,13 @@ As soon as the **API has been called**, it will start getting the file and obfus
 It's really simple to use our API, in JavaScript, it only requires one line of code!
 
 ```js
-window.location = "https://api.codeguard.tech/?link=<code link here>&lang=<js or py>
+window.location = "https://api.codeguard.tech/?link=<code link here>
 ```
 
 For example:
 
 ```js
-window.location = "https://api.codeguard.tech/?link=https://gist.githubusercontent.com/Omar8345/1038a82e7db5f81d0722a4f2ab701924/raw/b213490f419b1d67de6a6a1647557934b97fc1ef/nicecode.js&lang=js
+window.location = "https://api.codeguard.tech/?link=https://gist.githubusercontent.com/Omar8345/1038a82e7db5f81d0722a4f2ab701924/raw/b213490f419b1d67de6a6a1647557934b97fc1ef/nicecode.js
 ```
 
 ### Hosting the API on your machine
@@ -62,9 +64,9 @@ Next, head into `CodeGuard/API` and open your favorite IDE, if you use **Visual 
 
 - And it will open up **VSC** in the folder, just run in the terminal the following command:
 
-`$env:FLASK_APP="__init__.py && flask run"`
+`$env:FLASK_APP="__init__.py && flask run`
 
-- You should see a local link, head into it or [http://127.0.0.1:5000/](http://127.0.0.1:5000/) and you should find some kind of error, just simply ignore it, now add the `link` and `lang` parameters value and you should be good to go!
+- You should see a local link, head into it or [http://127.0.0.1:5000/](http://127.0.0.1:5000/) and you should find some kind of error, just simply ignore it, now add the `link` parameter value and you should be good to go!
 
 Read more at: [Introducing CodeGuard](https://omardevblog.toolsandapps4us.site/codeguard)
 

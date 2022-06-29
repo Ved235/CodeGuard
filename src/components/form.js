@@ -8,6 +8,8 @@ import theme from "../theme/index";
 import fetch from "node-fetch";
 import Swal from "sweetalert2";
 
+
+
 import Layout from "../components/layout";
 
 function Form() {
@@ -67,7 +69,11 @@ function Form() {
                     validUrl.isUri(formData.codeLink) &&
                     page === FormTitles.length - 2 
                   ) {
-                    if(formData.codeLink.slice(-3) === ".js" || formData.codeLink.slice(-4) === ".js/"){
+                    if(formData.codeLink.slice(0,19) === "https://github.com/"){
+                      formData.programmingLanguage = 'GitHub Repository (.py and .js)'
+                      setPage((currPage) => currPage + 1);
+                    }
+                    else if(formData.codeLink.slice(-3) === ".js" || formData.codeLink.slice(-4) === ".js/"){
                     formData.programmingLanguage = 'JavaScript'
                     setPage((currPage) => currPage + 1);
                     }
@@ -83,29 +89,35 @@ function Form() {
                     Error("Error!", "Invalid URL. (No URL submitted)");
                   }
                   if (page === FormTitles.length - 1) {
-                    if (formData.programmingLanguage === "JavaScript") {
-                      if(formData.codeLink.slice(-3) === ".js" || formData.codeLink.slice(-4) === ".js/"){
+                    if (formData.programmingLanguage === "GitHub Repository (.py and .js)") {
+                      if (formData.codeLink.slice(0,19) === "https://github.com/") {
+                        Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly! (as a ZIP file)");
+                        window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
+                      }
+                      else {
+                        Error("Error!", "It seems that you did not submit a valid GitHub repository URL. (Please submit a valid GitHub repository URL)");
+                      }
+                    }
+                    else if (formData.programmingLanguage === "JavaScript") {
+                      if(formData.codeLink.slice(-3) === ".js" && formData.codeLink.slice(0,19) !== "https://github.com/"){
                         Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
                         window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
                       }
                       else{
                         Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
                       }
-                  
                     } else if (formData.programmingLanguage === "Python") {
-                      Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
-                      if (formData.codeLink.slice(-3) === ".py" || formData.codeLink.slice(-4) === ".py/") {
+                      if (formData.codeLink.slice(-3) === ".py" && formData.codeLink.slice(0,19) !== "https://github.com/") {
+                        Alert("Success!", "Please wait, your obfuscated code will be downloaded shortly!");
                         window.location = "https://api.codeguard.tech?link=" + formData.codeLink + "&redirect=false";
                       }
-                      else{
+                      else {
                         Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
                       }
-                    } else {
-                      Error("Error!", "It seems you choosed the wrong programming language, it's better to proceed with the automatic selection.");
                     }
                   }
                 }}
-              >
+                >
                 {page === FormTitles.length - 1 ? "Submit" : "Next"}
               </button>
             </div>
