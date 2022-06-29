@@ -100,7 +100,7 @@ const styles = {
     },
     navLink: {
       fontSize: "16px",
-      color: "#02073E",
+      color: "grey",
       fontWeight: "400",
       cursor: "pointer",
       lineHeight: "1.2",

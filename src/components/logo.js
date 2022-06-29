@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx, Image } from "theme-ui";
 
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
+
+import logo from "./logo.svg";
 
 export default function Logo() {
 
-    return <Image src={logoLight} sx={{ display: "flex"  }} alt="CodeGuard Logo" />;
+    return <Image src={logo} sx={{ display: "flex"  }} alt="CodeGuard Logo" />;
   
 }
