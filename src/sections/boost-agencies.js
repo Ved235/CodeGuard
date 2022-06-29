@@ -5,7 +5,7 @@ import { Link } from "components/link";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
 import { FaAngleRight } from "react-icons/fa";
-import image1 from "assets/boost-1-1.png";
+import image1 from "assets/boost.png";
 
 const BoostAgencies = () => {
   return (

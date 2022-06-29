@@ -7,7 +7,7 @@ import img1 from "assets/partner-1-1.png";
 import img2 from "assets/partner-1-2.png";
 import img3 from "assets/partner-1-3.png";
 
-import bannerImg from "assets/banner-image-1-1.png";
+import bannerImg from "assets/banner.png";
 
 const Banner = () => {
   return (
@@ -36,11 +36,12 @@ const styles = {
   banner: {
     pt: ["110px", null, null, null, "150px", "200px"],
     pb: ["50px", null, null, null, "60px", null, "0"],
-    backgroundColor: "#F6F8FB",
+    backgroundColor: "background_secondary",
     overflow: "hidden",
   },
   container: {
     width: [null, null, null, null, null, null, "1390px"],
+    
   },
   grid: {
     display: "grid",
@@ -95,7 +96,7 @@ const styles = {
   image: {
     img: {
       display: "flex",
-      mixBlendMode: "darken",
+    
       position: "relative",
       top: ["0", null, null, null, null, "-40px"],
       maxWidth: ["100%", null, null, null, null, null, "none"],

@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx, Box, Text, Container } from "theme-ui";
-import { Link } from "theme-ui";
+import { Link, Button} from "theme-ui";
 import Logo from "../logo";
 export default function Footer() {
   return (
     <footer
       sx={{
         variant: "layout.footer",
-        backgroundColor: "#fff",
+        backgroundColor: "background_secondary",
       }}
     >
       <Container
@@ -38,6 +38,7 @@ export default function Footer() {
             Hackathon
           </Text>
         </Box>
+
       </Container>
     </footer>
   );
