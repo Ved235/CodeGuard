@@ -24,6 +24,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} - Design & Developed by Vedant and
             Omar
           </Text>
+          
         </Box>
         <Box sx={styles.right}>
           <Text>
@@ -61,9 +62,10 @@ const styles = {
     paddingBottom: 20,
     fontSize: 2,
     alignItems: "center",
-    color: "black",
+    color: "secondary",
     a: {
       transition: "500ms",
+      color: "heading_secondary",
       "&:hover": {
         color: "primary",
       },
