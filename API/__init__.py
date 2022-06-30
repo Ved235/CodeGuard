@@ -9,7 +9,7 @@ def api():
     link = flask.request.args.get('link')
     redirect = flask.request.args.get('redirect')
     
-    if link == None:
+    if link == None or link == "":
         return flask.render_template('index.html')
        
     if link.startswith == "https://github.com/" == False and link.endswith('.py/') or link.endswith('.py'):
