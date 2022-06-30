@@ -37,7 +37,7 @@ const Services = () => {
       <Container>
         <BlockTitle
           slogan="Quality features"
-          title="Meet the exciting feature of our tool"
+          title="Meet the exciting features of our tool"
           styles={styles.blockTitle}
         />
         <Grid sx={styles.grid}>
