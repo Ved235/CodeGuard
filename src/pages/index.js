@@ -11,6 +11,7 @@ import Services from "sections/services";
 import VideoOne from "sections/video-one";
 import CallToAction from "sections/call-to-action";
 import BoostAgencies from "sections/boost-agencies";
+import { STATUS_FIXED } from "react-stickynode";
 
 
 export default function IndexPage({props}) {
@@ -25,6 +26,19 @@ const toggleTheme = () => {
   return (
     <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
       <StickyProvider>
+      <Button onClick={toggleTheme} sx={{  color: 'white',
+      bg: 'primary',
+      cursor: 'pointer',
+      transition: '500ms',
+      bottom: '1rem',
+      right: 0,
+      position: 'fixed',
+      zIndex: 9999,
+      fontSize: 2,
+      right: '1rem',
+      '&:hover': {
+        bg: 'secondary',
+      }}}>Switch Theme</Button>
         <Layout>
     
           <SEO title="CodeGuard" />
@@ -35,16 +49,7 @@ const toggleTheme = () => {
 
           <CallToAction />
         </Layout>
-        <Button onClick={toggleTheme} sx={{  color: 'white',
-      bg: 'primary',
-      cursor: 'pointer',
-      transition: '500ms',
- 
-      
-      fontSize: 2,
-      '&:hover': {
-        bg: 'secondary',
-      }}}>Switch Theme</Button>
+
       </StickyProvider>
     </ThemeProvider >
   );
