@@ -6,12 +6,12 @@ function InfoOne({ formData, setFormData }) {
     <div className={styles.eachContainer}>
       <Text sx={{ fontSize: "18px", marginBottom: "15px", cursor: "default" }}>
         Go to{" "}
-        <a style={{ color: "blue" }} href="https://gist.github.com/">
+        <a style={{ color: "blue" }} href="https://gist.github.com/" target="_blank">
           GitHub Gist
         </a>{" "}
         and paste your JavaScript or your Python code, open your code in raw
         view and paste the link in the address bar below OR{" "}
-        <a style={{ color: "blue" }} href="https://github.com/new">
+        <a style={{ color: "blue" }} href="https://github.com/new" target="_blank">
         create a GitHub Repository 
         </a>{" "}
         and paste your GitHub Repository link below!
