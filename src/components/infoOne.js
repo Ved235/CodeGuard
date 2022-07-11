@@ -9,8 +9,8 @@ function InfoOne({ formData, setFormData }) {
         <a style={{ color: "blue" }} href="https://gist.github.com/" target="_blank">
           GitHub Gist
         </a>{" "}
-        and paste your JavaScript or your Python code, open your code in raw
-        view and paste the link in the address bar below OR{" "}
+        and create a GitHub Gist, open your Gist in raw
+        view and paste the link in the browser address bar below or {" "}
         <a style={{ color: "blue" }} href="https://github.com/new" target="_blank">
         create a GitHub Repository 
         </a>{" "}
