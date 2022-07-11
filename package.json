@@ -39,7 +39,7 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "prettier": "^2.7.1"
