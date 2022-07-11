@@ -41,7 +41,7 @@
   "devDependencies": {
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
     "prettier": "^2.7.1"
   }
 }
